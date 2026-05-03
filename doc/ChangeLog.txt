@@ -3,6 +3,14 @@ Authors: Steven Shiau <steven _at_ clonezilla org>, Blake, Kuo-Lien Huang (klhau
 License: GPL
 https://clonezilla.org
 
+clonezilla (5.15.29-drbl1) unstable; urgency=medium
+
+  * Bug fixed: Func reduce_multipath_dev failed at a whole disk with a fs.
+  * Added manuals for ocs-sr and ocs-onthefly.
+  * Keep ocs-reset-kbd-lang, removed ocs-reset-keymap-lang.
+
+ -- Steven Shiau <steven@clonezilla.org>  Sun, 03 May 2026 19:36:02 +0800
+
 clonezilla (5.15.28-drbl1) unstable; urgency=medium
 
   * Language th_TH needs fbterm to show characters.
