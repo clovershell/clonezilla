@@ -13489,7 +13489,13 @@ reduce_multipath_dev() {
     disk=$(get_diskname "$p")
     pt=""
     if is_partition $p; then
-      pt=$(get_part_number "$p")
+      # If it's a partition, we should get the partition number.
+      # However, if the disk name is the same as the device name, it means
+      # it's a whole disk with a filesystem, not a partition.
+      # In this case, pt should be empty.
+      if [ "$disk" != "${p#/dev/}" ]; then
+        pt=$(get_part_number "$p")
+      fi
     fi
     serialno=$(pseudo_get_disk_serial_no "$disk")
     if [ -n "$serialno" ]; then
