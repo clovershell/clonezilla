@@ -42,3 +42,8 @@ install:
 	# install config files
 	install -d $(DESTDIR)/etc/drbl/
 	cp -a conf/* $(DESTDIR)/etc/drbl/
+
+	# install man pages
+	install -d $(DESTDIR)/usr/share/man/man8/
+	install -m 644 doc/ocs-sr.8 $(DESTDIR)/usr/share/man/man8/
+	install -m 644 doc/ocs-onthefly.8 $(DESTDIR)/usr/share/man/man8/
